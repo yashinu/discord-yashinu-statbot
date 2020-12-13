@@ -1,0 +1,36 @@
+{
+  "name": "yashinu-statbot",
+  "version": "0.0.1",
+  "description": "discord.gg/EjZH8kdesU",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "nodemon maiin.js"
+  },
+  "dependencies": {
+    "cron": "^1.8.2",
+    "discord.js": "^12.2.0",
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
+    "moment-timezone": "^0.5.31",
+    "mongoose": "^5.9.25",
+    "ms": "^2.1.2",
+    "node-superfetch": "^0.1.10",
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2",
+    "table": "^5.4.6"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
