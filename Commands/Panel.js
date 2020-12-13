@@ -1,4 +1,4 @@
-﻿const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 const MemberStats = require('../Models/MemberStats.js');
 const conf = require('../ayarlar.json');
 
@@ -10,7 +10,7 @@ module.exports.execute = async (client, message, args) => {
     let secim = args[0];
     const embed = new MessageEmbed().setColor(client.randomColor()).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }));
     if (secim === 'sıfırla') {
-        if (!args[1] || (args[1] !== 'ses' && args[1] !== 'chat' && args[1] !== 'teyit')) return message.channel.send(embed.setDescription('Sıfırlanacak veriyi belirtmelisin! (ses/chat/teyit)')).then(x => x.delete({timeout: 5000}));
+        if (!args[1] || (args[1] !== 'ses' && args[1] !== 'chat' )) return message.channel.send(embed.setDescription('Sıfırlanacak veriyi belirtmelisin! (ses/chat/teyit)')).then(x => x.delete({timeout: 5000}));
         if (args[1] === 'ses') {
             let newData = new Map();
             await MemberStats.updateMany({ guildID: message.guild.id }, { voiceStats: newData });
