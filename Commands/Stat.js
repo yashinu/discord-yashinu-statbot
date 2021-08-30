@@ -9,7 +9,7 @@ module.exports.execute = async(client, message, args,ayar,emoji) => {
     let uye = message.guild.member(kullanici);
     let embed = new MessageEmbed().setColor("3f0000").setAuthor(kullanici.tag.replace('`', '')+` ( ` + message.author.id + ` )` , kullanici.avatarURL({dynamic: true, size: 2048})).setThumbnail(kullanici.avatarURL({dynamic: true, size: 2048}));
     MemberStats.findOne({ guildID: message.guild.id, userID: uye.id }, (err, data) => {
-        if (!data) return global.send(message.channel, embed.setDescription('Belirtilen üyeye ait herhangi bir veri bulunamadı!'));
+        if (!data) return message.channel.send(embed.setDescription('Belirtilen üyeye ait herhangi bir veri bulunamadı!'));
         let haftalikSesToplam = 0;
         data.voiceStats.forEach(c => haftalikSesToplam += c);
         let haftalikSesListe = '';
