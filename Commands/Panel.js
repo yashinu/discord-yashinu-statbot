@@ -8,7 +8,7 @@ module.exports.execute = async (client, message, args) => {
     if(!conf.botowner.includes(message.author.id))
         if((message.guild.ownerID != message.author.id)) return message.channel.send('**Bunu yapmak için yeterli yetkin yok!**');
     let secim = args[0];
-    const embed = new MessageEmbed().setColor(client.randomColor()).setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }));
+    const embed = new MessageEmbed().setColor("RANDOM").setAuthor(message.member.displayName, message.author.avatarURL({ dynamic: true }));
     if (secim === 'sıfırla') {
         if (!args[1] || (args[1] !== 'ses' && args[1] !== 'chat' )) return message.channel.send(embed.setDescription('Sıfırlanacak veriyi belirtmelisin! (ses/chat/teyit)')).then(x => x.delete({timeout: 5000}));
         if (args[1] === 'ses') {
